@@ -5,61 +5,33 @@ The following homework has 2 parts, the first conducted in jupyter notebook and 
 
 ## Part I - Climate Analysis and Exploration
 
-* Use the provided [starter notebook](climate_starter.ipynb) and [hawaii.sqlite](Resources/hawaii.sqlite) files to complete your climate analysis and data exploration.
+Summary of actions, SQLAlchemy was used to `create_engine` for connecting to a sqlite database and `automap_base()` was used to reflect the tables in the database.  This was linked to Python to create dataframes for analysis and plotting.
 
-* Use SQLAlchemy `create_engine` to connect to your sqlite database.
+### A.  Precipitation Analysis
 
-* Use SQLAlchemy `automap_base()` to reflect your tables into classes and save a reference to those classes called `Station` and `Measurement`.
+The objective of this section was to create a dataframe containing date and precipitation data for a 12 month period and plot the data.  The analysis started with identifying the most recent date in the data set and then running a query to create a table of the data.  The table was then converted to a dataframe for plotting purposes.
 
-* Link Python to the database by creating an SQLAlchemy session.
+--- insert 1) filter for recent date, 2) table creation, and 3)conversion to df
 
-* **Important** Don't forget to close out your session at the end of your notebook.
+----4) insert plot
 
-### Precipitation Analysis
+Pandas was then used to create a summary statistics for the precipitation data.
 
-* Start by finding the most recent date in the data set.
+----5) insert snip of table
 
-* Using this date, retrieve the last 12 months of precipitation data by querying the 12 preceding months of data. **Note** you do not pass in the date as a variable to your query.
+### B. Station Analysis
 
-* Select only the `date` and `prcp` values.
+The objective of this section was to create a histogram of the temperatures from a 12 month period for the most active weather station.  The process started with identifying the number of weather stations in the data set and then finding the most active weather station (the most rows of data).
 
-* Load the query results into a Pandas DataFrame and set the index to the date column.
+After the most active weather station was identifed, the lowest (tmin), highest (tmax), and average temperature (tavg) were identified for the station.  This was conducted to create a snapshot of the characteristics of the temerature profile.
 
-* Sort the DataFrame values by `date`.
+---- insert query and results
 
-* Plot the results using the DataFrame `plot` method.
+A query was then created to collect data for the most recent 12 months for the most active station.  The data was then converted to a dataframe and presented in a histogram with 12 bins.
 
-  ![precipitation](Images/precipitation.png)
+-- insert pic of query
+-- insert pic of histogram
 
-* Use Pandas to print the summary statistics for the precipitation data.
-
-### Station Analysis
-
-* Design a query to calculate the total number of stations in the dataset.
-
-* Design a query to find the most active stations (i.e. which stations have the most rows?).
-
-  * List the stations and observation counts in descending order.
-
-  * Which station id has the highest number of observations?
-
-  * Using the most active station id, calculate the lowest, highest, and average temperature.
-
-  * Hint: You will need to use a function such as `func.min`, `func.max`, `func.avg`, and `func.count` in your queries.
-
-* Design a query to retrieve the last 12 months of temperature observation data (TOBS).
-
-  * Filter by the station with the highest number of observations.
-
-  * Query the last 12 months of temperature observation data for this station.
-
-  * Plot the results as a histogram with `bins=12`.
-
-    ![station-histogram](Images/station-histogram.png)
-
-* Close out your session.
-
-- - -
 
 ## Step 2 - Climate App
 

@@ -33,13 +33,11 @@ A query was then created to collect data for the most recent 12 months for the m
 -- insert pic of histogram
 
 
-## Step 2 - Climate App
+## Part II - Climate App
 
-Now that you have completed your initial analysis, design a Flask API based on the queries that you have just developed.
+A Flask API is created based on the queries created in Part I.
 
-* Use Flask to create your routes.
-
-### Routes
+### Routes created for Part II
 
 * `/`
 
@@ -69,12 +67,6 @@ Now that you have completed your initial analysis, design a Flask API based on t
   * When given the start only, calculate `TMIN`, `TAVG`, and `TMAX` for all dates greater than and equal to the start date.
 
   * When given the start and the end date, calculate the `TMIN`, `TAVG`, and `TMAX` for dates between the start and end date inclusive.
-
-## Hints
-
-* You will need to join the station and measurement tables for some of the queries.
-
-* Use Flask `jsonify` to convert your API data into a valid JSON response object.
 
 - - -
 

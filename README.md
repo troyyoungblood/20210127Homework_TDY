@@ -47,27 +47,27 @@ A Flask API is created based on the queries created in Part I.
 
 A listing of all routes available
 
-<img src="/images_for_github/station_temp_data.PNG" width = "425">
+<img src="/images_for_github/api_routes.PNG" width = "425">
 
 Precipitation route and snip of browser display
 
-<img src="/images_for_github/station_temp_data.PNG" width = "425">
+<img src="/images_for_github/precip_snip.PNG" width = "425">
 
 Stations route and snip of browser display
 
-<img src="/images_for_github/station_temp_data.PNG" width = "425">
+<img src="/images_for_github/stations_snip.PNG" width = "425">
 
 Observed temperatures (tobs) for most active station over past 12 months route and snip of browser display
 
-<img src="/images_for_github/station_temp_data.PNG" width = "425">
+<img src="/images_for_github/tobs_snip.PNG" width = "425">
 
 For a single date entered - calculate tmin, tmax, and tavg for all dates greater than and equal to the single date route and snip of browser display
 
-<img src="/images_for_github/station_temp_data.PNG" width = "425">
+<img src="/images_for_github/single_data_snip.PNG" width = "425">
 
 For two dates entered - calculate tmin, tmax, and tavg for all dates between and equal to both dates route and snip of browser display
 
-<img src="/images_for_github/station_temp_data.PNG" width = "425">
+<img src="/images_for_github/two_data_snip.PNG" width = "425">
 
 - - -
 

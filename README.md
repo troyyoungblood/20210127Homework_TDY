@@ -25,15 +25,19 @@ Pandas was then used to create a summary statistics for the precipitation data.
 
 The objective of this section was to create a histogram of the temperatures from a 12 month period for the most active weather station.  The process started with identifying the number of weather stations in the data set and then finding the most active weather station (the most rows of data).
 
+<img src="/images_for_github/stat_info.PNG" width = "425">
+
+<img src="/images_for_github/station_info.PNG" width = "425">
+
 After the most active weather station was identifed, the lowest (tmin), highest (tmax), and average temperature (tavg) were identified for the station.  This was conducted to create a snapshot of the characteristics of the temerature profile.
 
----- insert query and results
+<img src="/images_for_github/act_stat_min_max_avg.PNG" width = "425">
 
 A query was then created to collect data for the most recent 12 months for the most active station.  The data was then converted to a dataframe and presented in a histogram with 12 bins.
 
--- insert pic of query
--- insert pic of histogram
+<img src="/images_for_github/station_temp_data.PNG" width = "425">
 
+<img src="/ty_HW10_temp_hist.png" width_line = "500">'
 
 ## Part II - Climate App
 

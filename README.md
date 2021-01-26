@@ -11,7 +11,10 @@ Summary of actions, SQLAlchemy was used to `create_engine` for connecting to a s
 
 The objective of this section was to create a dataframe containing date and precipitation data for a 12 month period and plot the data.  The analysis started with identifying the most recent date in the data set and then running a query to create a table of the data.  The table was then converted to a dataframe for plotting purposes.
 
---- insert 1) filter for recent date, 2) table creation, and 3)conversion to df
+<img src="/images_for_github/recent_date_query.PNG" width = "450">
+
+<img src="/images_for_github/creating_table.PNG" width = "450">
+
 
 ----4) insert plot
 

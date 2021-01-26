@@ -33,7 +33,7 @@ After the most active weather station was identifed, the lowest (tmin), highest 
 
 <img src="/images_for_github/act_stat_min_max_avg.PNG" width = "425">
 
-A query was then created to collect data for the most recent 12 months for the most active station.  The data was then converted to a dataframe and presented in a histogram with 12 bins.
+A query was then created to collect data for the most recent 12 months for the most active station.  The data was then converted to a dataframe and presented in a histogram with 12 bins.  That data was then presented in a histogram.
 
 <img src="/images_for_github/station_temp_data.PNG" width = "425">
 
@@ -45,34 +45,29 @@ A Flask API is created based on the queries created in Part I.
 
 ### Routes created for Part II
 
-* `/`
+A listing of all routes available
 
-  * Home page.
+<img src="/images_for_github/station_temp_data.PNG" width = "425">
 
-  * List all routes that are available.
+Precipitation route and snip of browser display
 
-* `/api/v1.0/precipitation`
+<img src="/images_for_github/station_temp_data.PNG" width = "425">
 
-  * Convert the query results to a dictionary using `date` as the key and `prcp` as the value.
+Stations route and snip of browser display
 
-  * Return the JSON representation of your dictionary.
+<img src="/images_for_github/station_temp_data.PNG" width = "425">
 
-* `/api/v1.0/stations`
+Observed temperatures (tobs) for most active station over past 12 months route and snip of browser display
 
-  * Return a JSON list of stations from the dataset.
+<img src="/images_for_github/station_temp_data.PNG" width = "425">
 
-* `/api/v1.0/tobs`
-  * Query the dates and temperature observations of the most active station for the last year of data.
+For a single date entered - calculate tmin, tmax, and tavg for all dates greater than and equal to the single date route and snip of browser display
 
-  * Return a JSON list of temperature observations (TOBS) for the previous year.
+<img src="/images_for_github/station_temp_data.PNG" width = "425">
 
-* `/api/v1.0/<start>` and `/api/v1.0/<start>/<end>`
+For two dates entered - calculate tmin, tmax, and tavg for all dates between and equal to both dates route and snip of browser display
 
-  * Return a JSON list of the minimum temperature, the average temperature, and the max temperature for a given start or start-end range.
-
-  * When given the start only, calculate `TMIN`, `TAVG`, and `TMAX` for all dates greater than and equal to the start date.
-
-  * When given the start and the end date, calculate the `TMIN`, `TAVG`, and `TMAX` for dates between the start and end date inclusive.
+<img src="/images_for_github/station_temp_data.PNG" width = "425">
 
 - - -
 

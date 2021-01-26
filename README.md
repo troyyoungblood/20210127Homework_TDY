@@ -15,7 +15,7 @@ The objective of this section was to create a dataframe containing date and prec
 
 <img src="/images_for_github/creating_table.PNG" width = "450">
 
-
+<img src="/images_for_github/ty_HW10_precip_" width_line = "450">
 ----4) insert plot
 
 Pandas was then used to create a summary statistics for the precipitation data.

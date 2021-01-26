@@ -11,17 +11,15 @@ Summary of actions, SQLAlchemy was used to `create_engine` for connecting to a s
 
 The objective of this section was to create a dataframe containing date and precipitation data for a 12 month period and plot the data.  The analysis started with identifying the most recent date in the data set and then running a query to create a table of the data.  The table was then converted to a dataframe for plotting purposes.
 
-<img src="/images_for_github/recent_date_query.PNG" width = "450">
+<img src="/images_for_github/recent_date_query.PNG" width = "400">
 
-<img src="/images_for_github/creating_table.PNG" width = "450">
+<img src="/images_for_github/creating_table.PNG" width = "425">
 
-<img src="/ty_HW10_precip_line.png" width_line = "450">'
-
-----4) insert plot
+<img src="/ty_HW10_precip_line.png" width_line = "500">'
 
 Pandas was then used to create a summary statistics for the precipitation data.
 
-----5) insert snip of table
+<img src="/images_for_github/summary_stat_table.PNG" width = "425">
 
 ### B. Station Analysis
 

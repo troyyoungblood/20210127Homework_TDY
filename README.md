@@ -1,121 +1,79 @@
 # SQLAlchemy Homework - Surfs Up!
 
-### Before You Begin
+The following homework has 2 parts, the first conducted in jupyter notebook and the second in vs code.  The analysis was completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
 
-1. Create a new repository for this project called `sqlalchemy-challenge`. **Do not add this homework to an existing repository**.
+## Part I - Climate Analysis and Exploration
 
-2. Clone the new repository to your computer.
+Summary of actions, SQLAlchemy was used to `create_engine` for connecting to a sqlite database and `automap_base()` was used to reflect the tables in the database.  This was linked to Python to create dataframes for analysis and plotting.
 
-3. Add your Jupyter notebook and `app.py` to this folder. These will be the main scripts to run for analysis.
+### A.  Precipitation Analysis
 
-4. Push the above changes to GitHub or GitLab.
+The objective of this section was to create a dataframe containing date and precipitation data for a 12 month period and plot the data.  The analysis started with identifying the most recent date in the data set and then running a query to create a table of the data.  The table was then converted to a dataframe for plotting purposes.
 
-![surfs-up.png](Images/surfs-up.png)
+<img src="/images_for_github/recent_date_query.PNG" width = "400">
 
-Congratulations! You've decided to treat yourself to a long holiday vacation in Honolulu, Hawaii! To help with your trip planning, you need to do some climate analysis on the area. The following outlines what you need to do.
+<img src="/images_for_github/creating_table.PNG" width = "425">
 
-## Step 1 - Climate Analysis and Exploration
+<img src="/ty_HW10_precip_line.png" width_line = "500">'
 
-To begin, use Python and SQLAlchemy to do basic climate analysis and data exploration of your climate database. All of the following analysis should be completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
+Pandas was then used to create a summary statistics for the precipitation data.
 
-* Use the provided [starter notebook](climate_starter.ipynb) and [hawaii.sqlite](Resources/hawaii.sqlite) files to complete your climate analysis and data exploration.
+<img src="/images_for_github/summary_stat_table.PNG" width = "425">
 
-* Use SQLAlchemy `create_engine` to connect to your sqlite database.
+### B. Station Analysis
 
-* Use SQLAlchemy `automap_base()` to reflect your tables into classes and save a reference to those classes called `Station` and `Measurement`.
+The objective of this section was to create a histogram of the temperatures from a 12 month period for the most active weather station.  The process started with identifying the number of weather stations in the data set and then finding the most active weather station (the most rows of data).
 
-* Link Python to the database by creating an SQLAlchemy session.
+<img src="/images_for_github/stat_info.PNG" width = "425">
 
-* **Important** Don't forget to close out your session at the end of your notebook.
+<img src="/images_for_github/station_info.PNG" width = "425">
 
-### Precipitation Analysis
+After the most active weather station was identifed, the lowest (tmin), highest (tmax), and average temperature (tavg) were identified for the station.  This was conducted to create a snapshot of the characteristics of the temerature profile.
 
-* Start by finding the most recent date in the data set.
+<img src="/images_for_github/act_stat_min_max_avg.PNG" width = "425">
 
-* Using this date, retrieve the last 12 months of precipitation data by querying the 12 preceding months of data. **Note** you do not pass in the date as a variable to your query.
+A query was then created to collect data for the most recent 12 months for the most active station.  The data was then converted to a dataframe and presented in a histogram with 12 bins.  That data was then presented in a histogram.
 
-* Select only the `date` and `prcp` values.
+<img src="/images_for_github/station_temp_data.PNG" width = "425">
 
-* Load the query results into a Pandas DataFrame and set the index to the date column.
+<img src="/ty_HW10_temp_hist.png" width_line = "500">'
 
-* Sort the DataFrame values by `date`.
+## Part II - Climate App
 
-* Plot the results using the DataFrame `plot` method.
+A Flask API is created based on the queries created in Part I.
 
-  ![precipitation](Images/precipitation.png)
 
-* Use Pandas to print the summary statistics for the precipitation data.
+### Routes created for Part II
 
-### Station Analysis
+A listing of all routes available
 
-* Design a query to calculate the total number of stations in the dataset.
+<img src="/images_for_github/api_routes.PNG" width = "425">
 
-* Design a query to find the most active stations (i.e. which stations have the most rows?).
+Precipitation route and snip of browser display
 
-  * List the stations and observation counts in descending order.
+<img src="/images_for_github/precip_snip.PNG" width = "425">
 
-  * Which station id has the highest number of observations?
+Stations route and snip of browser display
 
-  * Using the most active station id, calculate the lowest, highest, and average temperature.
+<img src="/images_for_github/stations_snip.PNG" width = "425">
 
-  * Hint: You will need to use a function such as `func.min`, `func.max`, `func.avg`, and `func.count` in your queries.
+Observed temperatures (tobs) for most active station over past 12 months route and snip of browser display
 
-* Design a query to retrieve the last 12 months of temperature observation data (TOBS).
+<img src="/images_for_github/tobs_snip.PNG" width = "425">
 
-  * Filter by the station with the highest number of observations.
+For a single date entered - calculate tmin, tmax, and tavg for all dates greater than and equal to the single date route and snip of browser display
 
-  * Query the last 12 months of temperature observation data for this station.
+<img src="/images_for_github/single_data_snip.PNG" width = "425">
 
-  * Plot the results as a histogram with `bins=12`.
 
-    ![station-histogram](Images/station-histogram.png)
+For two dates entered - calculate tmin, tmax, and tavg for all dates between and equal to both dates route and snip of browser displa
 
-* Close out your session.
+<img src="/images_for_github/two_data_snip.PNG" width = "425">
 
-- - -
 
-## Step 2 - Climate App
 
-Now that you have completed your initial analysis, design a Flask API based on the queries that you have just developed.
 
-* Use Flask to create your routes.
 
-### Routes
-
-* `/`
-
-  * Home page.
-
-  * List all routes that are available.
-
-* `/api/v1.0/precipitation`
-
-  * Convert the query results to a dictionary using `date` as the key and `prcp` as the value.
-
-  * Return the JSON representation of your dictionary.
-
-* `/api/v1.0/stations`
-
-  * Return a JSON list of stations from the dataset.
-
-* `/api/v1.0/tobs`
-  * Query the dates and temperature observations of the most active station for the last year of data.
-
-  * Return a JSON list of temperature observations (TOBS) for the previous year.
-
-* `/api/v1.0/<start>` and `/api/v1.0/<start>/<end>`
-
-  * Return a JSON list of the minimum temperature, the average temperature, and the max temperature for a given start or start-end range.
-
-  * When given the start only, calculate `TMIN`, `TAVG`, and `TMAX` for all dates greater than and equal to the start date.
-
-  * When given the start and the end date, calculate the `TMIN`, `TAVG`, and `TMAX` for dates between the start and end date inclusive.
-
-## Hints
-
-* You will need to join the station and measurement tables for some of the queries.
-
-* Use Flask `jsonify` to convert your API data into a valid JSON response object.
 
 - - -
 

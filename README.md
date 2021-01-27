@@ -4,7 +4,11 @@ The following homework has 2 parts, the first conducted in jupyter notebook and 
 
 path to Jupyter Notebook /Instructions/ty_homework_climate10.ipynb 
 
+[notebook]: </Instructions/ty_homework_climate10.ipynb>
+
 path to python file /Instruction/ty_homework_climate10_flask1.py 
+
+[python]: </Instruction/ty_homework_climate10_flask1.py>
 
 ## Part I - Climate Analysis and Exploration
 

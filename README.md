@@ -14,7 +14,7 @@ The objective of this section was to create a dataframe containing date and prec
 
 <img src="/images_for_github/creating_table.PNG" width = "425">
 
-<img src="/ty_HW10_precip_line.png" width_line = "500">'
+<img src="/images_for_github/ty_HW10_precip_line.png" width_line = "500">'
 
 Pandas was then used to create a summary statistics for the precipitation data.
 
@@ -36,7 +36,7 @@ A query was then created to collect data for the most recent 12 months for the m
 
 <img src="/images_for_github/station_temp_data.PNG" width = "425">
 
-<img src="/ty_HW10_temp_hist.png" width_line = "500">'
+<img src="/images_for_github/ty_HW10_temp_hist.png" width_line = "500">'
 
 ## Part II - Climate App
 

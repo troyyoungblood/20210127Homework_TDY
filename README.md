@@ -2,6 +2,11 @@
 
 The following homework has 2 parts, the first conducted in jupyter notebook and the second in vs code.  The analysis was completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
 
+path to Jupyter Notebook /Instructions/ty_homework_climate10.ipynb 
+[notebook]: <a href="/Instructions/ty_homework_climate10.ipynb">
+path to python file /Instruction/ty_homework_climate10_flask1.py 
+[python]: <a href="/Instructions/ty_homework_climate10_flask1.py">
+
 ## Part I - Climate Analysis and Exploration
 
 Summary of actions, SQLAlchemy was used to `create_engine` for connecting to a sqlite database and `automap_base()` was used to reflect the tables in the database.  This was linked to Python to create dataframes for analysis and plotting.
